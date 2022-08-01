@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .wapper{
+            width: 100%;
+            min-height: 100vh;
+            background-color: blue;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        } */
+        #toggle{
+            width: 38px;
+            height: 38px;
+            position: relative;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        #toggle::before{
+            position: absolute;
+            content: "";
+            height: 2px;
+            width: 26px;
+            transform: translateY(-6px);
+            background-color: azure;
+            transition: all 0.5s ease-in-out;
+        }
+        #toggle.open::before{
+            transform: rotate(45deg);
+        }
+        #toggle.open::after{
+            transform: rotate(-45deg);
+        }
+        #toggle::after{
+            position: absolute;
+            content: "";
+            height: 2px;
+            width: 26px;
+            background-color: azure;
+            transform: translateY(6px);
+            transition: all 0.5s ease-in-out;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wapper">
+        <div id="toggle"></div>
+    </div>
+
+    <script>
+        var toggle = document.getElementById('toggle')
+        toggle.onclick = function(){
+            toggle.classList.toggle('open')
+        }
+    </script>
+</body>
+</html>
